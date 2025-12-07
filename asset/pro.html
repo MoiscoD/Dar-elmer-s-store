@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Product Store</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e33b1972ba.js" crossorigin="anonymous"></script>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+      .sign {
+        display: inline-block;
+        justify-content: space-between;
+        text-align: right;
+        gap: 30px;
+        grid-template-columns: repeat(40px, 1fr);
+      }
+      .container {
+        /* background-color: #be2ed6; */
+        display: flex;
+        justify-content: left;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(4,900px);
+        gap: 20px;
+        padding-left: 8%;
+        margin-bottom: 20px;
+      
+      }
+      
+      .icon{
+        text-decoration: solid;
+        color: purple
+      }
+      .transit{
+        background-color: black;
+        height: 90vh;
+        width: 100%;
+        margin: auto;
+        padding-top: 15%;
+        text-align: center;
+
+      }
+   .overflow{
+            background-color: black;
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sub-overflow{
+            width: 70%;
+            height: 60vh;
+            display: flex;
+
+        }
+        .sub-overflow{
+            width: 80%;
+            height: 50vb;
+            /* background-color: red; */
+            justify-content: center;
+            gap: 10px;
+            overflow-x: auto;
+            
+        }
+        .sub-overflow img{
+            border-radius: 10px;
+          }
+          .week{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            overflow-x: auto;
+            width: 90%;
+            margin: auto;
+            height: 300px;
+            padding: auto;
+            padding-top: 80px;
+          }
+          .week img{
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+          }
+    </style>
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" >
+      <div class="container">
+        <div class="icon">
+      <img src="./asset/dar elmers (2).jpg" alt="">
+       <span>Dar Elmer's Digital</span>
+      </div>
+        <div class="Sign">
+          <input type="text" placeholder="search" class=" rounded"/> <span><i class="fa-solid fa-magnifying-glass"></i></span>
+          <i class="fa-solid fa-briefcase"></i>
+          <i class="fa-regular fa-user"></i>
+  
+        </div>
+      </div>
+    </nav>
+    <marquee behavior="" direction="" style="background-color: black; color: white;">FREE NEXT DAY DELIVERY  ON ORDERS ABOVE N150,000 IN  LAGOS!               FREE NEXT DAY DELIVERY  ON ORDERS ABOVE N500,000 IN  LAGOS!               FREE NEXT DAY DELIVERY  ON ORDERS ABOVE N150,000 IN  LAGOS!  </marquee>
+    <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">All</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Mobile Phones</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Laptops</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"href="#" aria-disabled="true">Smart Watches</a>
+  </li>
+
+ <li class="nav-item">
+    <a class="nav-link" href="#" aria-disabled="true">Tablets</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" href="#" aria-disabled="true">Accessories</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" href="#" aria-disabled="true">Audio</a>
+    <div class="dropdown">
+   <li><button class="btn btn-plain btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    More
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Repair</a></li>
+    <li><a class="dropdown-item" href="#">Networking</a></li>
+    <li><a class="dropdown-item" href="#">Training</a></li>
+  </ul>
+</div>
+</ul>  
+<div class="transit">
+
+
+<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./asset/6469df_67e45e00c2bb4ef1b2eea8b5706bc334~mv2.jpg" class="d-block w-30" alt="...">
+
+    </div>
+    <div class="carousel-item">
+      <img src="./asset/6469df_1cfbaefcd64f49bf863cc0e2748647e5~mv2.jpg" class="d-block w-30" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./asset/6469df_8cf19661aa7c446c98f5aa6deea4f5a8~mv2.jpg" class="d-block w-30" alt="...">
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./asset/6469df_1cfbaefcd64f49bf863cc0e2748647e5~mv2.jpg" class="d-block w-30" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./asset/6469df_67e45e00c2bb4ef1b2eea8b5706bc334~mv2.jpg" class="d-block w-30" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./asset/6469df_8cf19661aa7c446c98f5aa6deea4f5a8~mv2.jpg" class="d-block w-30" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+
+    <header class="py-5 text-center">
+      <h1 class="fw-bold">Review & Get Digital Devices Instantly</h1>
+      <p class="text-muted">
+        All brand new Devices
+      </p>
+    </header>
+
+    <div class=" container ">
+      <div class="row g-8">
+        <!-- Product Card -->
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mobile App UI Kit</h5>
+              <p class="text-muted small">Design template (Figma)</p>
+              <h5 class="text-primary">₦12,000</h5>
+              <button class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Duplicate this block for more products -->
+         <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mobile App UI Kit</h5>
+              <p class="text-muted small">Design template (Figma)</p>
+              <h5 class="text-primary">₦12,000</h5>
+              <button class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div>            
+      </div>
+      </div>
+
+       <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mobile App UI Kit</h5>
+              <p class="text-muted small">Design template (Figma)</p>
+              <h5 class="text-primary">₦12,000</h5>
+              <button class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mobile App UI Kit</h5>
+              <p class="text-muted small">Design template (Figma)</p>
+              <h5 class="text-primary">₦12,000</h5>
+              <button class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mobile App UI Kit</h5>
+              <p class="text-muted small">Design template (Figma)</p>
+              <h5 class="text-primary">₦12,000</h5>
+              <button class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mobile App UI Kit</h5>
+              <p class="text-muted small">Design template (Figma)</p>
+              <h5 class="text-primary">₦12,000</h5>
+              <button class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mobile App UI Kit</h5>
+              <p class="text-muted small">Design template (Figma)</p>
+              <h5 class="text-primary">₦12,000</h5>
+              <button class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mobile App UI Kit</h5>
+              <p class="text-muted small">Design template (Figma)</p>
+              <h5 class="text-primary">₦12,000</h5>
+              <button class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mobile App UI Kit</h5>
+              <p class="text-muted small">Design template (Figma)</p>
+              <h5 class="text-primary">₦12,000</h5>
+              <button class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            </div>
+            </div>
+
+    
+    <div>
+      <h3 style="text-align: center;">Weekly Deals-PreOwned Devices</h3>
+      <div class="week">
+        <img src="./asset/6469df_0c293157f7fe452395814cb7a35e8a91~mv2.jpeg" alt=""> <span>Price: #30,000</span>
+        <img src="./asset/6469df_1cfbaefcd64f49bf863cc0e2748647e5~mv2 (1).jpg" alt="">
+        <img src="./asset/6469df_2e70a776df8244688d7fe925c4eb1f8d~mv2 (1).jpeg" alt="">
+        <img src="./asset/6469df_2e70a776df8244688d7fe925c4eb1f8d~mv2.jpeg" alt="">
+        <img src="./asset/6469df_6009f86702e843b994b00c561fda8523~mv2.jpeg" alt="">
+        <img src="./asset/6469df_67e45e00c2bb4ef1b2eea8b5706bc334~mv2.jpg" alt="">
+        <img src="./asset/6469df_0c293157f7fe452395814cb7a35e8a91~mv2.jpeg" alt="">
+        <img src="./asset/6469df_1cfbaefcd64f49bf863cc0e2748647e5~mv2 (1).jpg" alt="">
+        <img src="./asset/6469df_2e70a776df8244688d7fe925c4eb1f8d~mv2 (1).jpeg" alt="">
+        <img src="./asset/6469df_2e70a776df8244688d7fe925c4eb1f8d~mv2.jpeg" alt="">
+        <img src="./asset/6469df_6009f86702e843b994b00c561fda8523~mv2.jpeg" alt="">
+        <img src="./asset/6469df_67e45e00c2bb4ef1b2eea8b5706bc334~mv2.jpg" alt="">
+      </div>
+    </div>
+             
+
+    <footer class="text-center py-4 mt-5 text-muted small">
+      © 2025 DigitalStore. All Rights Reserved.
+    </footer>
+  </body>
+</html>

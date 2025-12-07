@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Store</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            margin: 0;
+        }
+
+        .cart-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .cart-icon {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-list {
+            margin-top: 20px;
+        }
+
+        .product-item {
+            margin: 10px 0;
+        }
+
+        .checkout-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cart-container">
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒
+            <div class="cart-count" id="cartCount">0</div>
+        </div>
+    </div>
+
+    <div class="product-list">
+        <div class="product-item">
+            <p>Product 1 - $10</p>
+            <button onclick="addToCart(10)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <p>Product 2 - $15</p>
+            <button onclick="addToCart(15)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <p>Product 3 - $20</p>
+            <button onclick="addToCart(20)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div id="checkoutContainer" style="display:none;">
+        <h3>Checkout</h3>
+        <p id="cartDetails">No items in cart</p>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+
+    <script>
+        let cart = []; // Stores cart items (product prices)
+        
+        // Function to add product to cart
+        function addToCart(price) {
+            cart.push(price); // Add product price to the cart array
+            updateCartCount();
+        }
+
+        // Function to update cart icon count
+        function updateCartCount() {
+            document.getElementById("cartCount").innerText = cart.length; // Update number on cart icon
+        }
+
+        // Function to toggle the cart view
+        function toggleCart() {
+            if (cart.length > 0) {
+                showCheckout();
+            } else {
+                alert("Your cart is empty!");
+            }
+        }
+
+        // Function to show the checkout details
+        function showCheckout() {
+            let cartDetails = cart.map((item, index) => `Product ${index + 1}: $${item}`).join('<br>');
+            let totalAmount = cart.reduce((total, item) => total + item, 0);
+
+            document.getElementById("cartDetails").innerHTML = `${cartDetails}<br><strong>Total: $${totalAmount}</strong>`;
+            document.getElementById("checkoutContainer").style.display = "block";
+        }
+
+        // Function to handle checkout
+        function checkout() {
+            if (cart.length > 0) {
+                alert("Proceeding to payment...");
+                cart = []; // Clear cart after checkout
+                updateCartCount(); // Reset cart count
+                document.getElementById("checkoutContainer").style.display = "none"; // Hide checkout
+            } else {
+                alert("Your cart is empty. Add products to checkout.");
+            }
+        }
+    </script>
+
+</body>
+</html>

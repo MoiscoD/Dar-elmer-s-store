@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Product Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/e33b1972ba.js" crossorigin="anonymous"></script>
+  <script type="module" src="./script.js"></script>
+  <script src="./addtocart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background-color: white;
+      
+    }
+     .cart-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .cart-icon {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-list {
+            margin-top: 20px;
+        }
+
+        .product-item {
+            margin: 10px 0;
+        }
+
+        .checkout-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background-color: darkgreen;
+        }
+
+    .sign {
+      display: inline-block;
+      justify-content: space-between;
+      text-align: right;
+      gap: 30px;
+      grid-template-columns: repeat(40px, 1fr);
+    }
+
+    .container {
+      /* background-color: #be2ed6; */
+      display: flex;
+      justify-content: left;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 900px);
+      gap: 20px;
+      padding-left: 8%;
+      margin-bottom: 20px;
+
+    }
+
+    .icon {
+      text-decoration: solid;
+      color: white;
+
+    }
+
+
+
+    .sub-overflow {
+      width: 70%;
+      height: 60vh;
+      display: flex;
+
+    }
+
+    .sub-overflow {
+      width: 80%;
+      height: 50vb;
+      /* background-color: red; */
+      justify-content: center;
+      gap: 10px;
+      overflow-x: auto;
+
+    }
+
+    .sub-overflow img {
+      border-radius: 10px;
+    }
+
+    .week {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      overflow-x: auto;
+      width: 90%;
+      margin: auto;
+      height: 300px;
+      padding: auto;
+      padding-top: 80px;
+    }
+
+    .week img {
+
+
+      border-radius: 10px;
+    }
+
+    .category {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      /* background-color: black; */
+      padding: auto;
+      margin: auto;
+      padding-left: 50px;
+      margin-top: 50px;
+
+    }
+
+    .category img {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    label {
+      text-align: center;
+    }
+
+    .hm {
+      height: 80vh;
+
+    }
+
+    .air {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 50px;
+      background-color: lightgray;
+      margin: auto;
+      padding: 20px;
+
+      width: 80%;
+      height: 500px;
+      margin-top: 50px;
+      border-radius: 30px;
+    }
+
+    .text {
+      width: 40%;
+      font-size: 20px;
+    }
+
+    .foot {
+      background-color: #1c305c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      width: 95%;
+      margin: auto;
+      margin-top: 20px;
+      border-radius: 20px;
+
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 25px;
+      margin-top: 15px;
+    }
+
+    .section {
+      margin-top: 100px
+    }
+
+    .con {
+      height: 50vh;
+
+    }
+
+    .frame {
+      width: 100%;
+      height: 90vh;
+      text-align: center;
+      background-color: black;
+      padding-top: 30px;
+    }
+
+    .nav-sticky {
+      display: block;
+      position: fixed;
+      border-color: white;
+      text-align: center;
+      width: 100%;
+      background-color: whitesmoke;
+      color: purple;
+
+    }
+
+    .hot-sales {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: left;
+      margin-top: 50px;
+      animation: colorChange 0.5s infinite;
+    }
+
+    @keyframes colorChange {
+      0% {
+        color: red;
+      }
+
+      25% {
+        color: orange;
+      }
+
+      50% {
+        color: yellow;
+      }
+
+      75% {
+        color: green;
+      }
+
+      100% {
+        color: red;
+      }
+    }
+
+    .containerr {
+      text-align: center;
+      margin: auto;
+      margin-top: 80px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 600px;
+
+
+    }
+
+    .member {
+      text-align: center;
+      margin: auto;
+      margin-top: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 50px;
+    }
+
+    .social {
+      text-align: center;
+      margin: auto;
+      margin-top: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300px;
+
+
+    }
+
+    .btnn {
+      width: 400px;
+      height: 45px;
+      font-size: 16px;
+      margin: 5px 20px 5px 5px;
+      color: green;
+      border: outset;
+    }
+
+    .public {
+      text-align: center;
+      margin: auto;
+      margin-top: 20px;
+      height: 50vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+  <nav style="height: 1vh; padding-top: 35px;" class="navbar navbar-expand-lg navbar-light bg-black shadow-sm">
+    <div style="margin-top: 10px;" class="container">
+      <div class="icon">
+        <img style="border-radius: 50%; margin-right: 10px;" src="./asset/dar elmers (2).jpg" alt="">
+        <span>Dar Elmer's Digital Services</span>
+      </div>
+      <div class="Sign">
+        <input type="text" placeholder="search" class=" rounded" /> <span>
+          <i style="color: white; cursor: pointer;"
+            class="fa-solid fa-magnifying-glass"></i></span></a>
+        <i  style="color: white; cursor: pointer;"
+          class="fa-solid fa-briefcase"></i></a>
+        <i  style="color: white; cursor: pointer;"
+          class="fa-regular fa-user"></i></a>
+          
+
+
+      </div>
+    </div>
+  </nav>
+  <marquee behavior="" direction="" style="background-color: black; color: white;">FREE NEXT DAY DELIVERY ON ORDERS
+    ABOVE N150,000 IN LAGOS! FREE NEXT DAY DELIVERY ON ORDERS ABOVE N500,000 IN LAGOS! FREE NEXT DAY DELIVERY ON ORDERS
+    ABOVE N150,000 IN LAGOS! </marquee>
+  <div class="nav-sticky">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">All</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Mobile Phones</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Laptops</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" aria-disabled="true">Smart Watches</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" aria-disabled="true">Tablets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" aria-disabled="true">Accessories</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" aria-disabled="true">Audio</a>
+        <div class="dropdown">
+      <li><button class="btn btn-plain btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          More
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Repair</a></li>
+          <li><a class="dropdown-item" href="#">Networking</a></li>
+          <li><a class="dropdown-item" href="#">Training</a></li>
+        </ul>
+  </div>
+  <div class="cart-container">
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒
+            <div class="cart-count" id="cartCount">0</div>
+        </div>
+    </div>
+  </ul>
+  </div>
+
+
+  <div class="frame">
+    
+    <video src="./asset/iphn.mp4" autoplay muted playsinline loop width="50%" height="500vh" rounded>
+    </video>
+    
+  </div>
+
+
+<div class="text-center" style="margin-top: 20px;">
+      <h1 class="fw-bold">Xplore Our Store and products</h1>
+    </div>
+
+
+  
+<div class="base" style="text-align: center; background-color: black; height: 80vh; margin-top: 30px;">
+    
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div style="padding-top: 20px;" class="carousel-item active">
+        <video src="./asset/storeeee.mp4" autoplay muted playsinline loop width="50%" height="400vh" rounded>
+    </video>
+    </div>
+    <div style="margin-top: 20px;" class="carousel-item ">
+      <img src="https://i.pinimg.com/1200x/6c/f7/4a/6cf74a9d590f52f6f307273683ee310e.jpg" class=" mx-auto"  width="50%" height="400vh" alt="...">
+    </div>
+    <div style="padding-top: 20px; " class="carousel-item" >
+        <video src="./asset/lappp.mp4" autoplay muted playsinline loop width="50%" height="400vh" rounded>
+    </video>
+    </div>
+    <div style="padding-top: 20px;" class="carousel-item">
+        <video src="./asset/phnnnnnnn.mp4" autoplay muted playsinline loop width="50%" height="400vh" rounded>
+    </video>
+    </div>
+    <div style="padding-top: 20px;" class="carousel-item ">
+    <video src="./asset/touchhhhh.mp4" autoplay muted playsinline loop width="50%" height="400vh" rounded>
+    </video>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div>
+
+  
+<div class="section" >
+
+    <div class="text-center">
+      <h1 class="fw-bold">Review & Get Digital Devices Instantly</h1>
+      <p class="text-muted">
+        All brand new Devices
+      </p>
+    </div>
+
+    <div class=" container ">
+      <div class="row g-8">
+        
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://i.pinimg.com/1200x/57/ca/83/57ca83be880c89df91684d6a65230cc3.jpg"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Iphone 8+</h5>
+              <h5 class="text-primary">₦95,000</h5>
+              <button onclick="addToCart(95000.00)" class="btn btn-success w-100 mt-2">Buy Now !!</button>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://i.pinimg.com/736x/14/c5/84/14c58417f2d4c9f53877d53c68d6bb94.jpg"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Iphone x</h5>
+        
+              <h5 class="text-primary">₦150,000</h5>
+              <button onclick="addToCart(150000.00)" class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div>            
+      </div>
+      </div>
+
+       <div class="col-md-4">
+          <div class="card shadow-sm">
+        
+    <video src="./asset/iphn-xr.mp4" autoplay muted playsinline loop width="50%" height="400vh" rounded>
+    </video>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Iphone Xr</h5>
+              <h5 class="text-primary">₦265,000</h5>
+              <button onclick="addToCart(265000.00)" class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+                <video src="./asset/11promax.mp4" autoplay muted playsinline loop width="50%" height="400vh" rounded>
+    </video>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Iphone 11 Pro Max</h5>
+              <h5 class="text-primary">₦295,000</h5>
+              <button onclick="addToCart(295000.00)" class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://i.pinimg.com/736x/3c/9e/31/3c9e31903b3ee6c1f4e71a0f8451e43a.jpg"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Iphone 12 Pro Max</h5>
+              <h5 class="text-primary">₦540,000</h5>
+              <button onclick="addToCart(540000.00)" class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://i.pinimg.com/736x/e0/87/14/e08714336780dd6735bc9284f2098e27.jpg"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Iphone 13 Pro Max</h5>
+              <h5 class="text-primary">₦630,000</h5>
+              <button onclick="addToCart(630000.00)" class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+           <video src="./asset/14promax.mp4" autoplay muted playsinline loop width="50%" height="400vh" rounded>
+    </video> 
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Iphone 14 Pro Max</h5>
+              <h5 class="text-primary">₦960,000</h5>
+              <button onclick="addToCart(960000.00)" class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://i.pinimg.com/736x/5b/b3/50/5bb3507da95499db6acccb0eeb035bca.jpg"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Iphone 15 Pro Max</h5>
+              <h5 class="text-primary">₦₦1,350,000</h5>
+              <button onclick="addToCart(1350000.00)" class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            <div class="col-md-4">
+          <div style="padding-left: 50px;" class="card shadow-sm">
+            <video src="./asset/16promaxxxx.mp4" autoplay muted playsinline loop width="90%" height="400vh" rounded>
+    </video>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Iphone 16 pro</h5>
+              <h5 class="text-primary">₦1,621,000.</h5>
+              <button onclick="addToCart(1621000.00)" class="btn btn-success w-100 mt-2">Buy Now</button>
+            </div> 
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+
+
+
+  <div class="hm">
+    <h3 style="text-align: center; margin-top: 50px;">Categories of Availble New Devices</h3>
+    <div class="category">
+      <label for="#"> <img style="margin-bottom: 50px;"
+          src="https://i.pinimg.com/1200x/4c/7b/58/4c7b586c5279d4911d98b340a947909d.jpg" alt=""> Mobile Phones</label>
+      <label for="#"> <img style="margin-bottom: 50px;" class="dev"
+          src="https://i.pinimg.com/1200x/f5/ce/07/f5ce078e5112d477ba9edfbcc53d7870.jpg" alt=""> Laptops</label>
+      <label for="#"><img style="margin-bottom: 50px;" class="dev"
+          src="https://i.pinimg.com/736x/b2/58/88/b258886e2e4bd2fa68e9a2911eb413c2.jpg" alt=""> Audio Devices</label>
+      <label for="#"><img style="margin-bottom: 50px;" class="dev"
+          src="https://i.pinimg.com/736x/22/be/db/22bedb76b854f3b5527e9fa518091f86.jpg" alt=""> Games Consoles</label>
+      <label for="#"> <img style="margin-bottom: 50px;" class="dev"
+          src="https://i.pinimg.com/736x/43/a8/a8/43a8a80588ae71061fd64271009dc3d2.jpg" alt=""> internet Devices</label>
+      <label for="#"><img style="margin-bottom: 50px;" class="dev"
+          src="https://i.pinimg.com/1200x/2e/f6/6b/2ef66b2dc23c0230393891300639f3e1.jpg" alt=""> Tablets</label>
+    </div>
+
+  </div>
+
+
+
+
+  <div style="padding: auto; text-align: center; margin-bottom: 0px; margin-top: 60px;">
+    <a href=""><img style="border-radius: 30px;" src="./asset/shop used phone.jpg" alt=""> </a>
+    <marquee>We got Pre-Owned Devices in good state @ cheap rate !!!
+
+
+      We got Pre-Owned Devices in good state @ cheap rate !!!
+
+
+      We got Pre-Owned Devices in good state @ cheap rate !!!
+
+
+      We got Pre-Owned Devices in good state @ cheap rate !!!
+
+
+      We got Pre-Owned Devices in good state @ cheap rate !!!
+    </marquee>
+  </div>
+
+
+  <div style="padding-top: 20px; padding-bottom: 20px;">
+    <h3 style="text-align: center;">Weekly Deals On Pre-Owned Devices</h3>
+
+    <div class="week">
+      <img src="https://i.pinimg.com/736x/e1/dd/91/e1dd91a9f83a0164410d0172a0f9d812.jpg" alt="">
+      <img src="https://i.pinimg.com/1200x/24/8c/0a/248c0a7d78db9a9a4b50a7f852ffd415.jpg" alt="">
+      <video src="./asset/ttt.mp4" autoplay muted playsinline loop width="50%" height="200vh" rounded></video>
+      <img src="https://i.pinimg.com/1200x/ec/ea/08/ecea08b568afd2ecd02c071f7af8364b.jpg" alt="">
+      <img src="https://i.pinimg.com/736x/bf/e7/22/bfe722f88e2991c71048271dcdc62269.jpg" alt="">
+
+      <img src="https://i.pinimg.com/736x/de/bb/f8/debbf88de4b275fdaa5fda5278b352df.jpg" alt="">
+      <video src="./asset/hhh.mp4" autoplay muted playsinline loop width="50%" height="200vh" rounded></video>
+      <img src="https://i.pinimg.com/1200x/c6/0c/de/c60cde4aea5171bb0b852bdc0515fa11.jpg" alt="">
+      <video src="./asset/rrrrr.mp4" autoplay muted playsinline loop width="50%" height="200vh" rounded></video>
+      <img src="https://i.pinimg.com/1200x/2e/39/8b/2e398bfe6c641da2faabe4049820e923.jpg" alt="">
+      <img src="https://i.pinimg.com/736x/c1/eb/0b/c1eb0be6c01dac711716b25bc1ac0c00.jpg" alt="">
+      <video src="./asset/uuuuu.mp4" autoplay muted playsinline loop width="50%" height="200vh" rounded>
+        <img src="https://i.pinimg.com/736x/8b/b9/8e/8bb98e0670b37232a5cd9e2076989027.jpg" alt="">
+
+
+    </div>
+  </div>
+
+
+  <div class="air">
+    <div class="text">
+      <h6 class="hot-saes">🔥Hot Sales!!! 🔥</h6>
+
+      <i class="fa-brands fa-apple"></i> <span> Iphone 17 Air </span>
+      Thinnest iphone ever, 6.5-inch Display with ProMotion up to 120Hz, made with powerful A19 Pro chip with 48mp
+      camera and up to 1TB storage capacity. Center Stage Front Camera, All-Day Battery Life, Available in all colours.
+      <span class="hot-sales" style="font-family:cursive;"> Price: N300,000 </span>
+      <button type="button" class="hot-sales btn btn-outline-secondary">Buy now!! </button>
+    </div>
+
+
+    <div>
+      <img src="./asset/ipn 17 Air.jpg" alt="">
+    </div>
+  </div>
+
+  <div class="foot">
+    <h4>Dar Elmer's Digital Services</h4>
+    <p>Head Office: 15, Onikoko Estate, Lekki Lagos State.</p>
+    <p>Branch Office:5, Saw Mill street,Camp-Obantoko, Abeokuta Ogun state. </p>
+    <div class="social">
+      <i class="fa-solid fa-phone"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-tiktok"></i>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div>
+    <div class="w3-container">
+      <!-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large">Login</button> -->
+
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; height: 90vh; border-radius: 10%; "  >
+
+          <div class="w3-center"><br>
+            <span onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+            <img src="./asset/dar elmers (2).jpg" alt="Avatar" rounded >
+        
+          </div>
+
+          <div class="containerr">
+            <h1 style="text-align: center;">Sign Up </h1>
+          </div>
+          <div class="member">
+            <h5>Already a Member? <span><a href="">Log in</a></span></h5>
+          </div>
+
+          <div class="social">
+
+            <button id="google" type="button" class="btn btn-outline-secondary"><i class="fa-brands fa-google"></i> Sign
+              up with Google </button>
+          </div>
+          <div class="social">
+            <button id="facebook" type="button" class="btn btn-outline-secondary"><i class="fa-brands fa-facebook"></i>
+              Sign up with Facebook </button>
+          </div>
+
+          <div class="social">
+            <a href="./signup.html"> <button type="button" class="btn btn-outline-secondary"><i
+                  class="fa-regular fa-envelope-open"></i> Sign up with Email </button> </a>
+
+          </div>
+
+          <div class="public">
+            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+            <label class="form-check-label" for="checkDefault">
+              sign up to this site with a public profile.
+            </label> <span>
+              <a href="">Read more</a> </span>
+          </div>
+          </div>
+        </div>
+
+
+
+
+
+
+      
+
+
+
+<div>
+    <div class="w3-container">
+      <!-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large">Login</button> -->
+
+      <div id="checkoutContainer" style="display:none" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; height: 90vh; border-radius: 10%; "  >
+
+          <div class="w3-center"><br>
+            <span  onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+            <img src="./asset/dar elmers (2).jpg" alt="Avatar" rounded >
+        
+          
+
+       
+        <div id="checkoutContainer" style="display:block;">
+        <h3>Checkout</h3>
+        <p id="cartDetails">No items in cart</p>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+       
+       
+       
+          </div>
+        </div>
+
+
+        <footer class="text-center py-4 mt-5 text-muted small" style="display: flex; justify-content: space-evenly;">
+          <a href="" style="color: grey; text-decoration: none;">
+            <h5> Shopping and Delivery </h5>
+          </a>
+          © 2025 DigitalStore. All Rights Reserved.
+          <a href="" style="color: grey; text-decoration: none;">
+            <h5>Return Policy </h5>
+          </a>
+        </footer>
+
+
+
+
+
+
+      
+</body>
+
+</html>
